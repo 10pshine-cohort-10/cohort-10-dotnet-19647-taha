@@ -1,0 +1,16 @@
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\bin\Debug\net10.0\TaskManager.Application.deps.json
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\bin\Debug\net10.0\TaskManager.Application.dll
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\bin\Debug\net10.0\TaskManager.Application.pdb
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\bin\Debug\net10.0\TaskManager.Domain.dll
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\bin\Debug\net10.0\TaskManager.Domain.pdb
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.AssemblyInfo.cs
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.sourcelink.json
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskMana.898BD9DB.Up2Date
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.dll
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\refint\TaskManager.Application.dll
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\TaskManager.Application.pdb
+C:\Users\HP\Desktop\10Pearls Project\cohort-10-dotnet-19647-taha\src\TaskManager.Application\obj\Debug\net10.0\ref\TaskManager.Application.dll
