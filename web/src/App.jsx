@@ -21,7 +21,7 @@ export default function App() {
         <Route path="tasks/:id" element={<TaskDetailPage />} />
         <Route path="profile" element={<ProfilePage />} />
       </Route>
-      <Route path="\*" element={<NotFoundPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }
