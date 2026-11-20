@@ -485,3 +485,14 @@ $RECYCLE.BIN/
 node_modules/
 dist/
 .env
+
+# Build output
+bin/
+obj/
+.vs/
+logs/
+
+# Frontend
+node_modules/
+dist/
+.env
