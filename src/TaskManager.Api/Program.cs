@@ -28,6 +28,12 @@ try
 
     var app = builder.Build();
 
+        app.UseSerilogRequestLogging(options =>
+    {
+        options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
+            diagnosticContext.Set("UserName", httpContext.User.Identity?.Name ?? "anonymous");
+    });
+
     if (app.Environment.IsDevelopment())
     {
         app.MapOpenApi();
