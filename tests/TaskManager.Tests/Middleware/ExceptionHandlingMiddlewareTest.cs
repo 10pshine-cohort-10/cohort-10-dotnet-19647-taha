@@ -61,6 +61,21 @@ public class ExceptionHandlingMiddlewareTests
         Assert.Equal(StatusCodes.Status204NoContent, context.Response.StatusCode);
     }
 
+        [Fact]
+    public async Task InvokeAsync_ClearsResponseSetBeforeException()
+    {
+        var (context, body) = await InvokeWithAsync(ctx =>
+        {
+            ctx.Response.ContentLength = 1;
+            ctx.Response.Headers["X-Partial"] = "true";
+            throw new InvalidOperationException("boom");
+        });
+
+        Assert.Null(context.Response.ContentLength);
+        Assert.False(context.Response.Headers.ContainsKey("X-Partial"));
+        Assert.Equal(StatusCodes.Status500InternalServerError, body.GetProperty("status").GetInt32());
+    }
+
     [Fact]
     public void Constructor_NullNext_Throws()
     {

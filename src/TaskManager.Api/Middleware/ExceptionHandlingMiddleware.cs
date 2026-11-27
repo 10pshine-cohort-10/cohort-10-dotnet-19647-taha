@@ -62,6 +62,7 @@ public sealed class ExceptionHandlingMiddleware
         problem.Instance = context.Request.Path;
         problem.Extensions["traceId"] = context.TraceIdentifier;
 
+        context.Response.Clear();
         context.Response.StatusCode = status;
         return context.Response.WriteAsJsonAsync(problem, problem.GetType(), options: null, contentType: ProblemJson);
     }
