@@ -7,10 +7,12 @@ public sealed class ExceptionHandlingMiddleware
 {
     private const string ProblemJson = "application/problem+json";
     private readonly RequestDelegate _next;
+    private readonly ILogger<ExceptionHandlingMiddleware> _logger;
 
-    public ExceptionHandlingMiddleware(RequestDelegate next)
+    public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
     {
         _next = next ?? throw new ArgumentNullException(nameof(next));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public async Task InvokeAsync(HttpContext context)
@@ -27,7 +29,7 @@ public sealed class ExceptionHandlingMiddleware
         }
     }
 
-    private static Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         var (status, title) = exception switch
         {
@@ -36,6 +38,17 @@ public sealed class ExceptionHandlingMiddleware
             NotFoundException => (StatusCodes.Status404NotFound, "Resource not found"),
             _ => (StatusCodes.Status500InternalServerError, "An unexpected error occurred"),
         };
+
+        if (status == StatusCodes.Status500InternalServerError)
+        {
+            _logger.LogError(exception, "Unhandled exception for {Method} {Path}",
+                context.Request.Method, context.Request.Path);
+        }
+        else
+        {
+            _logger.LogWarning("{ExceptionType} for {Method} {Path}: {Message}",
+                exception.GetType().Name, context.Request.Method, context.Request.Path, exception.Message);
+        }
 
         ProblemDetails problem = exception is ValidationException validation
             ? new ValidationProblemDetails(validation.Errors)
