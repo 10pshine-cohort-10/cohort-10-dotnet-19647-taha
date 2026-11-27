@@ -2,6 +2,7 @@ using Serilog;
 using Serilog.Events;
 using TaskManager.Application;
 using TaskManager.Infrastructure;
+using TaskManager.Api.Middleware;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -29,6 +30,8 @@ try
         options.EnrichDiagnosticContext = (diagnosticContext, httpContext) =>
             diagnosticContext.Set("UserName", httpContext.User.Identity?.Name ?? "anonymous");
     });
+
+        app.UseMiddleware<ExceptionHandlingMiddleware>();
 
     if (app.Environment.IsDevelopment())
     {
